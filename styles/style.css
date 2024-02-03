@@ -4,6 +4,7 @@
   box-sizing: border-box;
 }
 
+
 html {
   block-size: 100%;
 }
@@ -95,6 +96,7 @@ ol {
 .result__video {
   width: 100%;
   height: 100%;
+  object-fit: fill;
 }
 
 .search-form {
@@ -118,6 +120,16 @@ ol {
   width: fit-content;
 }
 
+.search-form__label:has(:focus-visible)
+{
+  outline: 1px solid #FFFFFF;
+  border-radius: 0;
+}
+
+.search-form__label:hover {
+  text-decoration: underline;
+}
+
 .search-form__textfield {
   width: 225px;
   height: 27px;
@@ -132,14 +144,20 @@ ol {
   line-height: 22px;
   letter-spacing: 0em;
   text-align: left;
+  color: #FFFFFFB2;
   background-color: transparent;
   appearance: none;
+}
+
+.search-form__textfield:focus {
+  outline: none;
 }
 
 .search-form__checkbox-list {
   display: flex;
   gap: 17px;
   justify-content: flex-start; 
+  align-items: center;
 }
 
 .search-form__pseudo-checkbox {
@@ -149,6 +167,11 @@ ol {
   background-color: transparent;
   display: inline-block;
   cursor: pointer;
+}
+
+.search-form__checkbox:checked + .search-form__pseudo-checkbox {
+  padding: 5px;
+  background-color: #FFFFFF;
 }
 
 .search-form__label-text {
@@ -172,6 +195,23 @@ ol {
   background-color: transparent;
   color: #FFFFFF;
   cursor: pointer;
+}
+
+.button:focus {
+  outline: none;
+}
+
+.button:hover {
+  text-decoration: underline;
+}
+
+.button:active {
+  background-color: #545050;
+}
+
+.button:focus-visible {
+  outline: 1px solid #FFFFFF;
+  border-radius: 0;
 }
 
 .search-form__submit-button {
@@ -216,6 +256,30 @@ ol {
 .content__card-link {
   color: #FFFFFF;
   text-decoration: none;
+  display: block;
+  padding: 2px;
+  margin: 2px;
+}
+
+.content__card-link:active {
+  background-color: #545050;
+}
+
+.content__card-link:hover {
+  text-decoration: underline;
+}
+
+.content__card-link:focus {
+  outline: none;
+}
+
+.content__card-link:focus-visible {
+  outline: 1px solid #FFFFFF;
+  border-radius: 0;
+}
+
+.content__card-link_current {
+  background-color: #545050;
 }
 
 .content__video-card {
@@ -230,12 +294,13 @@ ol {
 }
 
 .content__video-card-title {
-  font-family: Oswald, sans-serif;
+  font-family: 'Oswald', sans-serif;
   font-size: 30px;
   font-weight: 700;
   line-height: 30px;
   letter-spacing: 0em;
   text-align: left;  
+  text-transform: uppercase;
   margin-bottom: 6px;
 }
 
